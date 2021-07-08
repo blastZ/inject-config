@@ -1,0 +1,23 @@
+{
+  "name": "@blastz/inject-config",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "jest",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "push": "npm run format && npm run tsc && npm run test && npm publish --access public --registry=https://registry.npmjs.org"
+  },
+  "author": "blastz",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.0.1",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2"
+  }
+}
