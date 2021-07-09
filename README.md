@@ -48,6 +48,20 @@ process.env.INJECT_CONFIG_PATH = '/usr/src/config';
 import { inject } from '../src';
 ```
 
+## Change array merge method
+
+Overwrite the old array config
+
+```ts
+type ProxyConfig = {
+  target: string;
+};
+
+const proxiesConfig = inject<ProxyConfig[]>('proxies', [], {
+  arrayMerge: (_, sourceArray) => sourceArray,
+});
+```
+
 ## License
 
 MIT

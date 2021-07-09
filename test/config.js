@@ -5,4 +5,9 @@ module.exports = {
   redis: {
     port: 5252,
   },
+  wsProxies: [
+    {
+      target: '127.0.0.1',
+    },
+  ],
 };

@@ -14,10 +14,22 @@ try {
   );
 }
 
+function getDefault(config: unknown) {
+  if (Array.isArray(config)) {
+    return [];
+  }
+
+  return {};
+}
+
 export function inject<T>(
   configName: string,
   config: T,
   options?: deepmerge.Options,
 ) {
-  return deepmerge<T>(config, (globalConfig[configName] as T) || {}, options);
+  return deepmerge<T>(
+    config,
+    (globalConfig[configName] as T) || getDefault(config),
+    options,
+  );
 }
